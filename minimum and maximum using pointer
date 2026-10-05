@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stddef.h>
+
+int array_min_max(const int *arr, size_t n, int *out_min, int *out_max) {
+    if (arr == NULL || out_min == NULL || out_max == NULL || n == 0)
+        return -1;   // Error
+
+    *out_min = *arr;
+    *out_max = *arr;
+
+    for (size_t i = 1; i < n; i++) {
+        if (*(arr + i) < *out_min)
+            *out_min = *(arr + i);
+
+        if (*(arr + i) > *out_max)
+            *out_max = *(arr + i);
+    }
+
+    return 0;   // Success
+}
+
+int main() {
+    int arr[] = {12, -3, 8, 21, 0};
+    int min, max;
+
+    if (array_min_max(arr, 5, &min, &max) == 0) {
+        printf("Minimum = %d\n", min);
+        printf("Maximum = %d\n", max);
+    } else {
+        printf("Error\n");
+    }
+
+    return 0;
+}
