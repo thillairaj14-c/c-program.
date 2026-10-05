@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stddef.h>
+
+int sum_array(const int *arr, size_t n) {
+    int sum = 0;
+
+    while (n--) {
+        sum += *arr;
+        arr++;
+    }
+
+    return sum;
+}
+
+int main() {
+    int arr[] = {4, 7, 2, 9};
+
+    printf("Sum = %d\n", sum_array(arr, 4));
+
+    return 0;
+}
