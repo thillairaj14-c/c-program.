@@ -1,0 +1,23 @@
+
+#include <stdio.h>
+
+#define CELSIUS_TO_FAHRENHEIT(c) (((c) * 9.0 / 5.0) + 32.0)
+#define MV_TO_V(mv) ((mv) / 1000.0)
+
+int main(void) {
+    double temperature, voltage;
+
+    printf("Temperature: ");
+    scanf("%lf", &temperature);
+
+    printf("Voltage: ");
+    scanf("%lf", &voltage);
+
+    printf("Temperature in Fahrenheit: %.2f\n",
+           CELSIUS_TO_FAHRENHEIT(temperature));
+
+    printf("Voltage in volts: %.2f\n",
+           MV_TO_V(voltage));
+
+    return 0;
+}
