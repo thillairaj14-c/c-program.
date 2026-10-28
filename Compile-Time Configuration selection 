@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+#define CLOCK_MODE 2
+
+int main() 
+{
+#if CLOCK_MODE == 1
+    printf("Selected clock frequency: 16 MHz");
+#elif CLOCK_MODE == 2
+    printf("Selected clock frequency: 32 MHz");
+#else
+    printf("Unsupported configuration");
+#endif
+
+    return 0;
+}
